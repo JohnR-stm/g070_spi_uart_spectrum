@@ -355,9 +355,10 @@
                     <name>CCIncludePath2</name>
                     <state>$PROJ_DIR$\..\</state>
                     <state>$PROJ_DIR$\..\project</state>
-                    <state>$PROJ_DIR$\..\project\mdl_stm32</state>
-                    <state>$PROJ_DIR$\..\project\mdl_stm32\uart</state>
-                    <state>$PROJ_DIR$\..\project\mdl_stm32\led</state>
+                    <state>$PROJ_DIR$\..\project\modules\mdl_stm32</state>
+                    <state>$PROJ_DIR$\..\project\modules\mdl_stm32\uart</state>
+                    <state>$PROJ_DIR$\..\project\modules\mdl_stm32\led</state>
+                    <state>$PROJ_DIR$\..\project\modules\mdl_stm32\spi</state>
                     <state>$PROJ_DIR$\..\project\mdl_config</state>
                     <state>$PROJ_DIR$\..\project\application</state>
                     <state>$PROJ_DIR$\..\project\ST</state>
@@ -614,7 +615,7 @@
                 </option>
                 <option>
                     <name>AOutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>ALimitErrorsCheck</name>
@@ -2205,6 +2206,39 @@
     </group>
     <group>
         <name>modules</name>
+        <group>
+            <name>led</name>
+            <file>
+                <name>$PROJ_DIR$\..\project\modules\mdl_stm32\led\led_hw.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\project\modules\mdl_stm32\led\led_hw.h</name>
+            </file>
+        </group>
+        <group>
+            <name>spi</name>
+            <file>
+                <name>$PROJ_DIR$\..\project\modules\mdl_stm32\spi\spi_hw.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\project\modules\mdl_stm32\spi\spi_hw.h</name>
+            </file>
+        </group>
+        <group>
+            <name>uart</name>
+            <file>
+                <name>$PROJ_DIR$\..\project\modules\mdl_stm32\uart\uart.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\project\modules\mdl_stm32\uart\uart.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\project\modules\mdl_stm32\uart\uart_hw.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\project\modules\mdl_stm32\uart\uart_hw.h</name>
+            </file>
+        </group>
     </group>
     <group>
         <name>ST</name>

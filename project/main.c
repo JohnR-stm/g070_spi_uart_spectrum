@@ -1,8 +1,11 @@
 #include "system_init.h"
 #include "uart.h"
 #include "led_hw.h"
+#include "spi_hw.h"
+#include "app_uart.h"
 
-char string1[] = "Hello, I'm STM32G070! \r\n";
+//char string1[] = "Hello, I'm STM32G070! \r\n";
+//static char string1[] = " led blink \r\n";
 
 //----------------------------------------------------------------------------
 // MAIN
@@ -10,20 +13,32 @@ char string1[] = "Hello, I'm STM32G070! \r\n";
 
 int main(void)
 {
+  //app_bufer_init();
+  
   system_clock_config();
   led_init();
+  
   uart_init_all();
   
+  //--- init SPI2, DMA1, DMA1-Interrupts ---//
+  spi_init_all();
+  
+  //--- start DMA1 ---//
+  start_dma_spi();
+    
   while (1)
   {
+    system_delay(2);
+    //--- check and processing --//
+    data_processing();
+    
+    /*
     system_delay(200);
     led_green_on();
     
     system_delay(400);
     led_green_off();
-      
-    /// send message ///
-    uart1_send_string(string1);
+    */
   }
 }
 
